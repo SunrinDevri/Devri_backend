@@ -7,13 +7,20 @@ import cookie from 'cookie';
 import path from 'path';
 import randomstring from 'randomstring';
 import fs from 'fs';
+import unirest from 'unirest';
+import request from 'async-request';
+import moment from 'moment-timezone';
+
+//external module setting
+let seoul_time = moment().tz("Asia/Seoul").subtract(1, 'days');
+
 let debug = require('debug')('dicon:server');
 
 let app = express();
 let router = express.Router();
 
 //module setting
-import {Users} from './mongo';
+import {Users, boxoffices} from './mongo';
 
 //function
 require('./func');
@@ -37,11 +44,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 var index = require('./routes/index')(express.Router());
 var users = require('./routes/users')(express.Router(), Users);
 var auth = require('./routes/auth')(express.Router(), Users);
+var news = require('./routes/news')(express.Router(), Users, request);
+var movie = require('./routes/movie')(express.Router(), boxoffices, request, seoul_time);
 
 //router setting
 app.use('/', index);
 app.use('/users', users);
 app.use('/auth', auth);
+app.use('/news', news);
+app.use('/movie', movie);
 
 
 //create server

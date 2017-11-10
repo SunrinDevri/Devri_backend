@@ -9,17 +9,59 @@ var UsersSchema = mongoose.Schema({
   id: {type: String},
   passwd: {type: String},
   nick_name: {type: String},
-  days: {type: Number},
-  favor: {type: Number},
-  health: {type: Number},
-  dev_availity: {type: Number},
+  favorait: [String],
+
 });
 
+var boxofficeSchema = mongoose.Schema({
+  date: String,
+  boxofficeType: String,
+  showRange: String,
+  dailyBoxOfficeList: [{
+    rank: String,
+    rankInten: String,
+    rankOldAndNew: String,
+    movieNm: String,
+    openDt: String,
+    salesAcc: String,
+    audiCnt: String,
+    audiInten: String,
+    audiChange: String,
+    audiAcc: String,
+    scrnCnt: String,
+    showCnt: String
+  }]
+});
 
-require('./err')(UsersSchema, rndString);
+var MusicsSchema = mongoose.Schema({
+  Artist: String,
+  Title: String,
+  Genre: String
+});
+
+var ToursSchema = mongoose.Schema({
+  Region: String,
+  Name: String,
+  CATEGORY: String,
+  COMMENT: String,
+  GPS: [String]
+});
+
+var WordsSchema = mongoose.Schema({
+  WORD: String,
+  MEAN: String
+});
+
+require('./err')(UsersSchema,boxofficeSchema,rndString);
 
 var Users = mongoose.model("users", UsersSchema);
+var boxoffices = mongoose.model("boxoffices", boxofficeSchema);
+var Tours = mongoose.model("tours", ToursSchema);
+var Words = mongoose.model("woreds", WordsSchema);
 
 exports.Users = Users;
+exports.boxoffices = boxoffices;
+exports.Tours = Tours;
+exports.Words = Words;
 
 export default db;

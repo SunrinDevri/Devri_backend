@@ -1,4 +1,4 @@
-module.exports = (Users, rndString)=>{
+module.exports = (Users, boxoffices, rndString)=>{
   var user_params = ['id', 'passwd', 'nick_name'];
   Users.pre('save', async function(next, done){
     const user = this;
@@ -18,6 +18,13 @@ module.exports = (Users, rndString)=>{
     else next(error);
   });
 
+  //boxoffices
+  boxoffices.post('save', (error, res, next)=>{
+    if (error.name === 'MongoError' && error.code === 11000) next(new boxoffices_duplicate("duplicate error"));
+    else if(error.name === "ValidationError") next(new ValidationError(error.message));
+    else next(error);
+  });
+  
   Users.method('generateToken', ()=>{
     return rndString.generate();
   });
