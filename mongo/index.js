@@ -8,7 +8,6 @@ mongoose.Promise = global.Promise;
 var UsersSchema = mongoose.Schema({
   pin: {type: String},
   code: {type: String},
-  nick_name: {type: String},
   favorait: {
     movie:{
       kind: {type: String}

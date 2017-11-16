@@ -1,5 +1,5 @@
 module.exports = (Users, boxoffices, rndString)=>{
-  var user_params = ['id', 'passwd', 'nick_name'];
+  var user_params = ['code', 'pin'];
   Users.pre('save', async function(next, done){
     const user = this;
     let result = await user_params.every(str => user[str] != undefined && user[str] != null && user[str].length > 0);
@@ -24,7 +24,7 @@ module.exports = (Users, boxoffices, rndString)=>{
     else if(error.name === "ValidationError") next(new ValidationError(error.message));
     else next(error);
   });
-  
+
   Users.method('generateToken', ()=>{
     return rndString.generate();
   });
