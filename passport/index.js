@@ -4,16 +4,18 @@ const LocalStrategy = require('passport-local').Strategy;
 module.exports = (Users) =>{
   //passport serialize
   passport.serializeUser((user, done)=>{
+    console.log(user);
     done(null, user);
   });
 
   passport.deserializeUser((obj, done)=>{
+    console.log(obj);
     done(null, obj);
   });
 
   passport.use(new LocalStrategy({ // local 전략을 세움
-      pinField: 'pin',
-      codeField: 'code',
+      usernameField: 'pin',
+      passwordField: 'code',
       session: true, // 세션에 저장 여부
       passReqToCallback: false,
     }, async function(pin, code, done){
