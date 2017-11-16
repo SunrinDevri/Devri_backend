@@ -10,6 +10,7 @@ import fs from 'fs';
 import unirest from 'unirest';
 import request from 'async-request';
 import moment from 'moment-timezone';
+import cookieSession from 'cookie-session';
 
 //external module setting
 let seoul_time = moment().tz("Asia/Seoul").subtract(1, 'days');
@@ -33,6 +34,17 @@ app.set('port', port);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+
+/**
+ * autheticated control
+ */
+
+var isAuthenticated = function (req, res, next) {
+  if (req.isAuthenticated())  return next();
+  res.render('login');
+};
+
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -40,11 +52,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cookieSession({
+  keys: ['h0t$ix'],
+  cookie: {
+    maxAge: 1000 * 60 * 60 // 유효기간 1시간
+  }
+}))
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(isAuthenticated);
 
 //router setting
-var index = require('./routes/index')(express.Router(), Users);
+var index = require('./routes/index')(express.Router(), Users, passport);
 var calendar = require('./routes/calendar')(express.Router());
 var users = require('./routes/users')(express.Router(), Users);
 var auth = require('./routes/auth')(express.Router(), Users, passport);
@@ -112,5 +131,6 @@ function onListening() {
     'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
 
 module.exports = app;

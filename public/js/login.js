@@ -20,5 +20,4 @@ function login() {
   document.body.appendChild(form);
 
   form.submit();
-  //document.body.appendChild(form);
 }

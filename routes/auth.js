@@ -4,6 +4,7 @@ module.exports = (router, Users, passport) =>{
   });
   router.post('/signup', async (req, res) => {
       const data = req.body;
+      console.log(data);
       const new_user = new Users(data);
       try{
         var result = await new_user.save();
@@ -15,8 +16,8 @@ module.exports = (router, Users, passport) =>{
       return res.status(200).json(result);
   })
 
-  .post('/signin', passport.authenticate('local'), (req,res)=>{
-     return res.status(200).send(req.session.passport.user);
+  .post('/signin',passport.authenticate('local'), (req,res)=>{
+    res.redirect('/');  
   })
 
   .get('/auto/:token', (req, res)=>{
