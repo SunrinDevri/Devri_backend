@@ -7,7 +7,7 @@ function login() {
   var code = document.createElement("input");
 
   form.setAttribute("method", "post");
-  form.setAttribute("action", ".");
+  form.setAttribute("action", "/auth/signin");
 
   pin.setAttribute("name", "pin");
   pin.setAttribute("value", document.getElementById("pin").value);
