@@ -14,6 +14,7 @@ import cookieSession from 'cookie-session';
 
 //external module setting
 let seoul_time = moment().tz("Asia/Seoul").subtract(1, 'days');
+let now_time = moment().tz("Asia/Seoul");
 
 let debug = require('debug')('dicon:server');
 
@@ -53,7 +54,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //router setting
-var index = require('./routes/index')(express.Router(), Users, passport);
+var index = require('./routes/index')(express.Router(), Users, passport, now_time);
 var calendar = require('./routes/calendar')(express.Router());
 var users = require('./routes/users')(express.Router(), Users);
 var auth = require('./routes/auth')(express.Router(), Users, passport);
@@ -61,6 +62,7 @@ var news = require('./routes/news')(express.Router(), Users, request);
 var movie = require('./routes/movie')(express.Router(), boxoffices, request, seoul_time);
 var setting = require('./routes/movie')(express.Router(), Users);
 const sounds = require('./routes/sounds')(express.Router(), Users);
+
 //router setting
 app.use('/calendar', calendar);
 app.use('/', index);

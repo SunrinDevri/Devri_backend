@@ -10,25 +10,29 @@ var UsersSchema = mongoose.Schema({
   code: {type: String},
   favorait: {
     movie:{
-      kind: {type: String}
+      kind: [String]
     },
     music:{
-      kind: {type: String}
+      kind: [String]
     },
     attractions:{
-      kind: {type: String}
+      kind: [String]
     },
     book:{
-      kind: {type: String}
+      kind: [String]
     },
     news:{
-      kind: {type: String}
+      kind: [String]
     }
   },
   habitat: {type: String},
   english:{
-    kind: {type: String}
-  }
+    kind: [String]
+  },
+  calendar:[{
+    date: {type: String},
+    summary: {type: String}
+  }]
 });
 
 var boxofficeSchema = mongoose.Schema({
