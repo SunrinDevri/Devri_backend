@@ -12,12 +12,12 @@ module.exports = (Users) =>{
   });
 
   passport.use(new LocalStrategy({ // local 전략을 세움
-      usernameField: 'id',
-      passwordField: 'passwd',
+      usernameField: 'pin',
+      passwordField: 'code',
       session: true, // 세션에 저장 여부
       passReqToCallback: false,
-    }, async function(id, passwd, done){
-      let user = await Users.findOne({id: id, passwd: passwd}, {__v: 0, _id:0});
+    }, async function(pin, code, done){
+      let user = await Users.findOne({pin: pin, code: code} , {__v: 0, _id:0});
       if(user) return done(null, user);
       else return done(null, false, {message: "아이디나 비밀번호가 틀렸습니다"})
     }));

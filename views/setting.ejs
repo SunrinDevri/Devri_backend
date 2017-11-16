@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>Devri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Devri ffs" />
+    <meta name="msapplication-TileColor" content="#00a1cf">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="./css/w3.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Style Library -->
+
+    <!--Calender-->
+    <link rel="stylesheet" href="css/clndr.css" type="text/css" />
+    <script src="js/underscore-min.js"></script>
+    <script src="js/moment-2.2.1.js"></script>
+    <script src="js/clndr.js"></script>
+    <script src="js/site.js"></script>
+    <!--End Calender-->
+    <script src="js/jClocksGMT.js"></script>
+    <link rel="stylesheet" href="css/jClocksGMT.css">
+
+</head>
+
+<body>
+    <header id="header-1" class="soft-scroll header-1" style="background-image: linear-gradient(to right, #95d7ff, #7fa0ff);height:60px;">
+
+        <nav class="main-nav navbar-fixed-top">
+
+            <div class="navbar-header" style="line-height:60px;">
+                <a href="#">
+                              <img src="img/LogoType.png" style="margin-left:8%;vertical-align:middle" class="brand-img img-responsive w3-animate-left">
+                          </a>
+            </div>
+
+        </nav>
+
+    </header>
+
+    <div class="w3-container" style="margin:30px 40px 0 40px">
+        <!-- The Grid -->
+        <div class="w3-row">
+            <!-- Left Column -->
+            <div class="w3-col m2">
+                <!-- Profile -->
+                <div class="w3-card w3-round w3-white" style="height:900px">
+                    <div class="w3-container w3-center">
+                        <p><img src="img/devri.png" height="180" class="brand-img img-responsive" alt="Avatar"></p>
+                        <p style="font-size:20px;">Devri는 지금 <small style="font-size:18px;color:#7f8bff">(감정)</small> </p>
+                        <hr>
+
+                        <h2 style="color:#grey;margin-bottom:20px;"><a style="text-decoration:none" href="index.html">메인</a></h2>
+                        <h2 style="color:grey;margin-bottom:20px;"><a style="text-decoration:none" href="Devri_Calander.html">일정 관리</a></h2>
+                        <h2 style="color:#7f8bff;margin-bottom:20px;"><a style="text-decoration:none" href="Devri_setting.html">설정</a></h2>
+                        <h2 style="color:grey;margin-bottom:20px;"><a style="text-decoration:none" href="Devri_preference.html">컨텐츠</a></h2>
+
+                    </div>
+                </div>
+                <br>
+
+                <!-- End Left Column -->
+            </div>
+
+            <!-- Middle Column -->
+            <div class="w3-col m10">
+
+                <div class="w3-card w3-round w3-white" style="position:relative;margin:0 50px;padding:0 40px;height:300px">
+                    <div class="w3-container" style="text-align:left;color:grey">
+
+                        <h2 style="text-align:left;color:grey">설정</h2>
+                            <hr style="margin:10px 0">
+                            <div style="margin-left:30px;">
+
+                        <form style="width:15%;margin-right:20px;float:left;" class="w3-center" name="movie" >
+                            <h1 style="font-size:30px;color:black;margin:0;">영화</h1>
+                            <hr style="margin:5px 35px">
+                            <input id="movie1"  type="checkbox" name="movie1" value="코미디"><label for="movie1"></label>&nbsp;&nbsp; 장르<br>
+                            <input id="movie2"  type="checkbox" name="movie2" value="코미디"><label for="movie2"></label>&nbsp;&nbsp; 장르<br>
+                            <input id="movie3"  type="checkbox" name="movie3" value="코미디"><label for="movie3"></label>&nbsp;&nbsp; 장르<br>
+                            <input id="movie4"  type="checkbox" name="movie4" value="코미디"><label for="movie4"></label>&nbsp;&nbsp; 장르<br>
+                            <input id="movie5"  type="checkbox" name="movie5" value="코미디"><label for="movie5"></label>&nbsp;&nbsp; 장르<br>
+                            <input id="movie6"  type="checkbox" name="movie6" value="코미디"><label for="movie6"></label>&nbsp;&nbsp; 장르<br>
+                        </form>
+
+                        <form style="width:15%;margin-right:20px;float:left;" class="w3-center" name="movie" >
+                            <h1 style="font-size:30px;color:black;margin:0;">음악</h1>
+                            <hr style="margin:5px 35px">
+                            <input id="music1"  type="checkbox" name="music1" value="코미디"><label for="music1"></label>&nbsp;&nbsp; 장르<br>
+                            <input id="music2"  type="checkbox" name="music2" value="코미디"><label for="music2"></label>&nbsp;&nbsp; 장르<br>
+                            <input id="music3"  type="checkbox" name="music3" value="코미디"><label for="music3"></label>&nbsp;&nbsp; 장르<br>
+                            <input id="music4"  type="checkbox" name="music4" value="코미디"><label for="music4"></label>&nbsp;&nbsp; 장르<br>
+                            <input id="music5"  type="checkbox" name="music5" value="코미디"><label for="music5"></label>&nbsp;&nbsp; 장르<br>
+                            <input id="music6"  type="checkbox" name="music6" value="코미디"><label for="music6"></label>&nbsp;&nbsp; 장르<br>
+                        </form>
+
+                        <form style="width:15%;margin-right:20px;float:left;" class="w3-center" name="movie" >
+                            <h1 style="font-size:30px;color:black;margin:0;">뉴스</h1>
+                            <hr style="margin:5px 35px">
+                            <input id="news1"  type="checkbox" name="news1" value="코미디"><label for="news1"></label>&nbsp;&nbsp; 장르<br>
+                            <input id="news2"  type="checkbox" name="news2" value="코미디"><label for="news2"></label>&nbsp;&nbsp; 장르<br>
+                            <input id="news3"  type="checkbox" name="news3" value="코미디"><label for="news3"></label>&nbsp;&nbsp; 장르<br>
+                            <input id="news4"  type="checkbox" name="news4" value="코미디"><label for="news4"></label>&nbsp;&nbsp; 장르<br>
+                            <input id="news5"  type="checkbox" name="news5" value="코미디"><label for="news5"></label>&nbsp;&nbsp; 장르<br>
+                            <input id="news6"  type="checkbox" name="news6" value="코미디"><label for="news6"></label>&nbsp;&nbsp; 장르<br>
+                        </form>
+                        <form style="width:15%;margin-right:20px;float:left;" class="w3-center" name="movie" >
+                            <h1 style="font-size:30px;color:black;margin:0;">서적</h1>
+                            <hr style="margin:5px 35px">
+                            <input id="book1"  type="checkbox" name="book1" value="코미디"><label for="book1"></label>&nbsp;&nbsp; 장르<br>
+                            <input id="book2"  type="checkbox" name="book2" value="코미디"><label for="book2"></label>&nbsp;&nbsp; 장르<br>
+                            <input id="book3"  type="checkbox" name="book3" value="코미디"><label for="book3"></label>&nbsp;&nbsp; 장르<br>
+                            <input id="book4"  type="checkbox" name="book4" value="코미디"><label for="book4"></label>&nbsp;&nbsp; 장르<br>
+                            <input id="book5"  type="checkbox" name="book5" value="코미디"><label for="book5"></label>&nbsp;&nbsp; 장르<br>
+                            <input id="book6"  type="checkbox" name="book6" value="코미디"><label for="book6"></label>&nbsp;&nbsp; 장르<br>
+                        </form>
+                        <form style="width:15%;margin-right:20px;float:left;" class="w3-center" name="movie" >
+                            <h1 style="font-size:30px;color:black;margin:0;">여행지</h1>
+                            <hr style="margin:5px 35px">
+                            <input id="travel1"  type="checkbox" name="trevel1" value="코미디"><label for="trevel1"></label>&nbsp;&nbsp; 장르<br>
+                            <input id="travel2"  type="checkbox" name="trevel2" value="코미디"><label for="trevel2"></label>&nbsp;&nbsp; 장르<br>
+                            <input id="travel3"  type="checkbox" name="trevel3" value="코미디"><label for="trevel3"></label>&nbsp;&nbsp; 장르<br>
+                            <input id="travel4"  type="checkbox" name="trevel4" value="코미디"><label for="trevel4"></label>&nbsp;&nbsp; 장르<br>
+                            <input id="travel5"  type="checkbox" name="trevel5" value="코미디"><label for="trevel5"></label>&nbsp;&nbsp; 장르<br>
+                            <input id="travel6"  type="checkbox" name="trevel6" value="코미디"><label for="trevel6"></label>&nbsp;&nbsp; 장르<br>
+                        </form>
+
+
+
+
+
+                    </div>
+
+
+
+
+                    </div>
+
+
+                </div>
+<br>
+                <div class="w3-card w3-round w3-white" style="position:relative;margin:0 50px;padding:0 40px;height:300px">
+                    <div class="w3-container" style="text-align:left;color:grey">
+
+                        <h2 style="text-align:left;color:grey">위치 정보</h2>
+                            <hr style="margin:5px 0">
+                            <div>
+<img src="https://via.placeholder.com/150x150" style="display:block;float:left;margin:10px;" class="brand-img img-responsive" alt="Avatar">
+                            <input type="id" style="margin:10px;border: 0;outline: 0;background: transparent;border-bottom: 2px solid #7fa1ff;font-size:30px;color:#7fa1ff;width:400px;" placeholder="&nbsp;지도 검색">
+                            
+                            <br>
+                        <br><br>
+                    </div>
+
+
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <br>
+
+
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,4 +1,7 @@
 module.exports = (router, Users, passport) =>{
+  router.get('/signin', (req,res)=>{
+    res.render('login');
+  });
   router.post('/signup', async (req, res) => {
       const data = req.body;
       const new_user = new Users(data);

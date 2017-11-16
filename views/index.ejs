@@ -46,14 +46,14 @@
             <!-- Left Column -->
             <div class="w3-col m2">
                 <!-- Profile -->
-                <div class="w3-card w3-round w3-white" style="height:900px">
+                <div class="w3-card w3-round w3-white" style="height:800px">
                     <div class="w3-container w3-center">
                         <p><img src="img/devri.png" height="180" class="brand-img img-responsive" alt="Avatar"></p>
                         <p style="font-size:20px;">Devri는 지금 <small style="font-size:18px;color:#7f8bff">(감정)</small> </p>
                         <hr>
 
-                        <h2 style="color:#7f8bff;margin-bottom:20px;"><a style="text-decoration:none" href="index.html">메인</a></h2>
-                        <h2 style="color:grey;margin-bottom:20px;"><a style="text-decoration:none" href="Devri_Calander.html">일정 관리</a></h2>
+                        <h2 style="color:#7f8bff;margin-bottom:20px;"><a style="text-decoration:none" href="/">메인</a></h2>
+                        <h2 style="color:grey;margin-bottom:20px;"><a style="text-decoration:none" href="/calendar">일정 관리</a></h2>
                         <h2 style="color:grey;margin-bottom:20px;"><a style="text-decoration:none" href="#">설정</a></h2>
                         <h2 style="color:grey;margin-bottom:20px;"><a style="text-decoration:none" href="Devri_preference.html">컨텐츠</a></h2>
 
@@ -74,8 +74,8 @@
                             <hr>
                             <div style="margin-left:30px;">
 
-                            <h2 style="color:black;margin:0;">오늘 일정 : <c style="color:#7f8bff">위너위너 치킨디너, 여포메타 10킬 이상</c> </h2>
-                            <h2 style="color:black;margin:0;">내일 일정 : <c style="color:#7f8bff">마감</c> </h2>
+                            <h2 style="color:black;margin:0;">오늘 일정 : <c style="color:#7f8bff"><%= user.calendar.todayPlan%></c> </h2>
+                            <h2 style="color:black;margin:0;">내일 일정 : <c style="color:#7f8bff"><%= user.calendar.nextdayPlan%></c> </h2>
                             <br>
                         <br><br>
                     </div>
@@ -95,13 +95,13 @@
                             <hr>
                             <div style="margin-left:30px;">
 
-                            <h3 style="margin:0;">좋아하는 영화 장르 : <c style="color:#7f8bff">SF/액션</c> </h3>
-                            <h3 style="margin:0;">좋아하는 음악 장르 : <c style="color:#7f8bff">클래식</c> </h3>
-                            <h3 style="margin:0;">좋아하는 여행지 : <c style="color:#7f8bff">전라북도 신안군</c> </h3>
-                            <h3 style="margin:0;">현재 거주지 : <c style="color:#7f8bff">봉하마을</c> </h3>
-                            <h3 style="margin:0;">좋아하는 독서 분야 : <c style="color:#7f8bff">사회</c> </h3>
-                            <h3 style="margin:0;">좋아하는 뉴스 분야 : <c style="color:#7f8bff">정치</c> </h3>
-                            <h3 style="margin:0;">영단어 분야 : <c style="color:#7f8bff">??</c> </h3>
+                            <h3 style="margin:0;">좋아하는 영화 장르 : <c style="color:#7f8bff"><%= user.favorite.movie %></c> </h3>
+                            <h3 style="margin:0;">좋아하는 음악 장르 : <c style="color:#7f8bff"><%= user.favorite.music%></c> </h3>
+                            <h3 style="margin:0;">좋아하는 여행지 : <c style="color:#7f8bff"><%= user.favorite.attractions%></c> </h3>
+                            <h3 style="margin:0;">현재 거주지 : <c style="color:#7f8bff"><%= user.habitat%></c> </h3>
+                            <h3 style="margin:0;">좋아하는 독서 분야 : <c style="color:#7f8bff"><%= user.favorite.book.kind%></c> </h3>
+                            <h3 style="margin:0;">좋아하는 뉴스 분야 : <c style="color:#7f8bff"><%= user.favorite.news.kind%></c> </h3>
+                            <h3 style="margin:0;">영단어 분야 : <c style="color:#7f8bff"><%= user.english.kind%></c> </h3>
                             <br>
                         <br><br>
                     </div>

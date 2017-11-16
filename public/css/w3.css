@@ -321,3 +321,39 @@ bottom: 0;
 left: 0;
 z-index: initial;
 }
+
+.dankshadow{
+    -webkit-box-shadow: 0 4px 5px 2px #BFBFBF;
+box-shadow: 0 4px 5px 2px #BFBFBF;
+}
+
+
+      input[type="checkbox"] + label {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        background-color: #bcbcbc;
+        border-radius: 7px;
+        cursor: pointer;
+      }
+      input[type="checkbox"]:checked + label {
+        background-color: #7f8bff;
+      }
+      input[type="checkbox"] {
+        display: none;
+      }
+      select {
+    width: 200px;
+    height: 30px;
+    padding-left: 10px;
+    font-size: 18px;
+    color: lightgray;
+    border: 0;
+    border-bottom: 1px solid lightgray;
+    -webkit-appearance: none; /* 화살표 없애기 for chrome*/
+   -moz-appearance: none;    /* 화살표 없애기 for firefox*/
+   appearance: none;         /* 화살표 없애기 공통*/
+}
+select::-ms-expand {
+   display: none;            /* 화살표 없애기 for IE10, 11*/
+}

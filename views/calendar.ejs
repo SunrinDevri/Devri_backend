@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>Devri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Devri ffs" />
+    <meta name="msapplication-TileColor" content="#00a1cf">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="./css/w3.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Style Library -->
+
+    <!--Calender-->
+    <link rel="stylesheet" href="css/clndr.css" type="text/css" />
+    <script src="js/underscore-min.js"></script>
+    <script src="js/moment-2.2.1.js"></script>
+    <script src="js/clndr.js"></script>
+    <script src="js/site.js"></script>
+    <!--End Calender-->
+    <script src="js/jClocksGMT.js"></script>
+    <link rel="stylesheet" href="css/jClocksGMT.css">
+
+</head>
+
+<body>
+    <header id="header-1" class="soft-scroll header-1" style="background-image: linear-gradient(to right, #95d7ff, #7fa0ff);height:60px;">
+
+        <nav class="main-nav navbar-fixed-top">
+
+            <div class="navbar-header" style="line-height:60px;">
+                <a href="#">
+                              <img src="img/LogoType.png" style="margin-left:8%;vertical-align:middle" class="brand-img img-responsive w3-animate-left">
+                          </a>
+            </div>
+
+        </nav>
+
+    </header>
+
+    <div class="w3-container" style="margin:30px 40px 0 40px">
+        <!-- The Grid -->
+        <div class="w3-row">
+            <!-- Left Column -->
+            <div class="w3-col m2">
+                <!-- Profile -->
+                <div class="w3-card w3-round w3-white" style="height:800px">
+                    <div class="w3-container w3-center">
+                        <p><img src="img/devri.png" height="180" class="brand-img img-responsive" alt="Avatar"></p>
+                        <p style="font-size:20px;">Devri는 지금 <small style="font-size:18px;color:#7f8bff">(감정)</small> </p>
+                        <hr>
+
+                        <h2 style="color:grey;margin-bottom:20px;"><a style="text-decoration:none" href="/">메인</a></h2>
+                        <h2 style="color:#7fa1ff;margin-bottom:20px;"><a style="text-decoration:none" href="/calendar">일정 관리</a></h2>
+                        <h2 style="color:grey;margin-bottom:20px;"><a style="text-decoration:none" href="#">설정</a></h2>
+                        <h2 style="color:grey;margin-bottom:20px;">컨텐츠</h2>
+
+                    </div>
+                </div>
+                <br>
+
+                <!-- End Left Column -->
+            </div>
+
+            <!-- Middle Column -->
+            <div class="w3-col m7">
+
+                <div class="w3-card w3-round w3-white" style="margin:0 30px;padding:0 40px;height:800px">
+                    <div class="w3-container w3-center">
+                        <div class="mini-cal">
+                            <div class="calender">
+                                <div class="column_right_grid calender">
+                                    <div class="cal1">
+                                        <div class="clndr">
+                                            <div class="clndr-controls">
+                                                <div class="clndr-control-button">
+                                                    <p class="clndr-previous-button">previous</p>
+                                                </div>
+                                                <div class="month">September 2015</div>
+                                                <div class="clndr-control-button rightalign">
+                                                    <p class="clndr-next-button">next</p>
+                                                </div>
+                                            </div>
+                                            <table class="clndr-table" border="0" cellspacing="0" cellpadding="0">
+                                                <thead>
+                                                    <tr class="header-days">
+                                                        <td class="header-day">S</td>
+                                                        <td class="header-day">월</td>
+                                                        <td class="header-day">T</td>
+                                                        <td class="header-day">W</td>
+                                                        <td class="header-day">T</td>
+                                                        <td class="header-day">F</td>
+                                                        <td class="header-day">S</td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="day past adjacent-month last-month calendar-day-2015-08-30">
+                                                            <div class="day-contents">30</div>
+                                                        </td>
+                                                        <td class="day past adjacent-month last-month calendar-day-2015-08-31">
+                                                            <div class="day-contents">31</div>
+                                                        </td>
+                                                        <td class="day past calendar-day-2015-09-01">
+                                                            <div class="day-contents">1</div>
+                                                        </td>
+                                                        <td class="day past calendar-day-2015-09-02">
+                                                            <div class="day-contents">2</div>
+                                                        </td>
+                                                        <td class="day past calendar-day-2015-09-03">
+                                                            <div class="day-contents">3</div>
+                                                        </td>
+                                                        <td class="day past calendar-day-2015-09-04">
+                                                            <div class="day-contents">4</div>
+                                                        </td>
+                                                        <td class="day past calendar-day-2015-09-05">
+                                                            <div class="day-contents">5</div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="day past calendar-day-2015-09-06">
+                                                            <div class="day-contents">6</div>
+                                                        </td>
+                                                        <td class="day past calendar-day-2015-09-07">
+                                                            <div class="day-contents">7</div>
+                                                        </td>
+                                                        <td class="day past calendar-day-2015-09-08">
+                                                            <div class="day-contents">8</div>
+                                                        </td>
+                                                        <td class="day past calendar-day-2015-09-09">
+                                                            <div class="day-contents">9</div>
+                                                        </td>
+                                                        <td class="day past event calendar-day-2015-09-10">
+                                                            <div class="day-contents">10</div>
+                                                        </td>
+                                                        <td class="day past event calendar-day-2015-09-11">
+                                                            <div class="day-contents">11</div>
+                                                        </td>
+                                                        <td class="day past event calendar-day-2015-09-12">
+                                                            <div class="day-contents">12</div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="day past event calendar-day-2015-09-13">
+                                                            <div class="day-contents">13</div>
+                                                        </td>
+                                                        <td class="day past event calendar-day-2015-09-14">
+                                                            <div class="day-contents">14</div>
+                                                        </td>
+                                                        <td class="day past calendar-day-2015-09-15">
+                                                            <div class="day-contents">15</div>
+                                                        </td>
+                                                        <td class="day past calendar-day-2015-09-16">
+                                                            <div class="day-contents">16</div>
+                                                        </td>
+                                                        <td class="day past calendar-day-2015-09-17">
+                                                            <div class="day-contents">17</div>
+                                                        </td>
+                                                        <td class="day past calendar-day-2015-09-18">
+                                                            <div class="day-contents">18</div>
+                                                        </td>
+                                                        <td class="day past calendar-day-2015-09-19">
+                                                            <div class="day-contents">19</div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="day past calendar-day-2015-09-20">
+                                                            <div class="day-contents">20</div>
+                                                        </td>
+                                                        <td class="day past event calendar-day-2015-09-21">
+                                                            <div class="day-contents">21</div>
+                                                        </td>
+                                                        <td class="day past event calendar-day-2015-09-22">
+                                                            <div class="day-contents">22</div>
+                                                        </td>
+                                                        <td class="day past event calendar-day-2015-09-23">
+                                                            <div class="day-contents">23</div>
+                                                        </td>
+                                                        <td class="day past calendar-day-2015-09-24">
+                                                            <div class="day-contents">24</div>
+                                                        </td>
+                                                        <td class="day past calendar-day-2015-09-25">
+                                                            <div class="day-contents">25</div>
+                                                        </td>
+                                                        <td class="day today calendar-day-2015-09-26">
+                                                            <div class="day-contents">26</div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="day calendar-day-2015-09-27">
+                                                            <div class="day-contents">27</div>
+                                                        </td>
+                                                        <td class="day calendar-day-2015-09-28">
+                                                            <div class="day-contents">28</div>
+                                                        </td>
+                                                        <td class="day calendar-day-2015-09-29">
+                                                            <div class="day-contents">29</div>
+                                                        </td>
+                                                        <td class="day calendar-day-2015-09-30">
+                                                            <div class="day-contents">30</div>
+                                                        </td>
+                                                        <td class="day adjacent-month next-month calendar-day-2015-10-01">
+                                                            <div class="day-contents">1</div>s
+                                                        </td>
+                                                        <td class="day adjacent-month next-month calendar-day-2015-10-02">
+                                                            <div class="day-contents">2</div>
+                                                        </td>
+                                                        <td class="day adjacent-month next-month calendar-day-2015-10-03">
+                                                            <div class="day-contents">3</div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+            <div class="w3-col m3">
+                <div class="w3-card w3-round w3-white" style="height:800px">
+                    <div class="w3-container">
+                        <br>
+                        <h3 id="rightdate" class="w3-center" style="color:#626262;font-size:25px">das</h3>
+                        <ul style="color:#7fa1ff">
+                            <li style="margin-bottom:30px;"><h2 style="text-align:left;margin:30px 30px 0 0;">&nbsp;배그 솔로로 치킨먹기</h2>
+                            <div style="width:100;font-size:18px"><small style="float:left">&nbsp;&nbsp;&nbsp;위너위너 치킨디너 </small><small style="float:right">[시간]</small></div>
+                            </li>
+                            <hr>
+                            <li style="margin-bottom:30px;"><h2 style="text-align:left;margin:30px 30px 0 0;">&nbsp;야 기분좋다</h2>
+                            <div style="width:100%;font-size:18px"><small style="float:left">&nbsp;&nbsp;&nbsp;노무 좋다 </small><small style="float:right">[시간]</small></div>
+                            </li>
+                            <hr>
+                            <li style="margin-bottom:30px;"><input type="id" style="border:none;font-size:30px;color:#7fa1ff;" placeholder="&nbsp;제목을 입력해주세요">
+                            <div style="width:100%;font-size:18px"><input type="id" style="border:none;text-align:left;color:#7fa1ff;font-size:80%;float:left;" placeholder="&nbsp;&nbsp;&nbsp;내용을 입력해주세요">
+                            <input type="date" style="border:none;text-align:right;color:#7fa1ff;font-size:80%;float:right;">
+                            </div>
+                            </li>
+                            <hr>
+
+                        </ul>
+                        <br>
+                        <div class="w3-center">
+                        <button class="w3-button w3-blue">추가하기</button>
+                    </div>
+                    </div>
+                </div>
+
+
+
+</body>
+
+</html>

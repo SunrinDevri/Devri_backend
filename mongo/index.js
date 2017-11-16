@@ -6,11 +6,30 @@ var db = mongoose.connect('mongodb://localhost/'+name.name);
 mongoose.Promise = global.Promise;
 
 var UsersSchema = mongoose.Schema({
-  id: {type: String},
-  passwd: {type: String},
+  pin: {type: String},
+  code: {type: String},
   nick_name: {type: String},
-  favorait: [String],
-
+  favorait: {
+    movie:{
+      kind: {type: String}
+    },
+    music:{
+      kind: {type: String}
+    },
+    attractions:{
+      kind: {type: String}
+    },
+    book:{
+      kind: {type: String}
+    },
+    news:{
+      kind: {type: String}
+    }
+  },
+  habitat: {type: String},
+  english:{
+    kind: {type: String}
+  }
 });
 
 var boxofficeSchema = mongoose.Schema({

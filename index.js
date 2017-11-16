@@ -21,6 +21,7 @@ let router = express.Router();
 
 //module setting
 import {Users, boxoffices} from './mongo';
+let passport = require('./passport')(Users);
 
 //function
 require('./func');
@@ -41,18 +42,22 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //router setting
-var index = require('./routes/index')(express.Router());
+var index = require('./routes/index')(express.Router(), Users);
+var calendar = require('./routes/calendar')(express.Router());
 var users = require('./routes/users')(express.Router(), Users);
 var auth = require('./routes/auth')(express.Router(), Users);
 var news = require('./routes/news')(express.Router(), Users, request);
 var movie = require('./routes/movie')(express.Router(), boxoffices, request, seoul_time);
+var setting = require('./routes/movie')(express.Router(), Users);
 
 //router setting
+app.use('/calendar', calendar);
 app.use('/', index);
 app.use('/users', users);
 app.use('/auth', auth);
 app.use('/news', news);
 app.use('/movie', movie);
+app.use('/setting', setting);
 
 
 //create server
