@@ -16,8 +16,8 @@ module.exports = (router, Users, passport, now_time)=>{
       }
 
       user_info.calendar.todayPlan = todayPlan;
-      user_info.calendar.nextdayPlan nextdayPlan;
-      
+      user_info.calendar.nextdayPlan = nextdayPlan;
+
       return await res.render('index', {user: user_info});
   })
 
