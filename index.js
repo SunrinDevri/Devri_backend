@@ -60,7 +60,7 @@ var auth = require('./routes/auth')(express.Router(), Users, passport);
 var news = require('./routes/news')(express.Router(), Users, request);
 var movie = require('./routes/movie')(express.Router(), boxoffices, request, seoul_time);
 var setting = require('./routes/movie')(express.Router(), Users);
-
+const sounds = require('./routes/sounds')(express.Router(), Users);
 //router setting
 app.use('/calendar', calendar);
 app.use('/', index);
