@@ -22,52 +22,54 @@
     <!--End Calender-->
     <script src="js/jClocksGMT.js"></script>
     <link rel="stylesheet" href="css/jClocksGMT.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <header id="header-1" class="soft-scroll header-1" style="background-image: linear-gradient(to right, #95d7ff, #7fa0ff);height:60px;">
 
-        <nav class="main-nav navbar-fixed-top">
+      <!-- Top container -->
+      <div class="w3-bar w3-top w3-large" style="z-index:4;background-color:#7f8bff;height:60px;color:white;">
+        <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" style="font-size:22px;" onclick="w3_open();"><i class="fa fa-bars"></i></button>
+          <a href="#" class="w3-bar-item" style="text-decoration:none;font-size:22px;">일정</a>
+      </div>
 
-            <div class="navbar-header" style="line-height:60px;">
-                <a href="#">
-                              <img src="img/LogoType.png" style="margin-left:8%;vertical-align:middle" class="brand-img img-responsive w3-animate-left">
-                          </a>
-            </div>
+      <!--slidebar-->
+      <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;margin-top:-15px" id="mySidebar"><br>
+<div class="w3-container w3-row" style="background-color:#7f8bff">
+  <div class="w3-col s4">
+    <img src="https://via.placeholder.com/100x100" style="width:100px;">
+    <h3 style="font-size:15px;color:#fff">지금 Devri는 (감정)</h3>
+  </div>
+  <div class="w3-col s8 w3-bar" >
+<span style="margin-left:20px;color:#fff;font-size:20px;">Project Devri<br><strong style="margin-left:20px;">: 000000</strong></span>
 
-        </nav>
+  </div>
+</div>
 
-    </header>
 
-    <div class="w3-container" style="margin:30px 40px 0 40px">
+<div class="w3-bar-block" style="font-size:20px">
+  <a href="#" class="w3-bar-item w3-button w3-padding w3-margin-left" style="margin-top:5px">메인</a>
+  <hr style="margin:5px 0">
+  <a href="#" class="w3-bar-item w3-button w3-padding w3-margin-left" style="color:#7f8bff">일정관리</a>
+  <hr style="margin:5px 0">
+  <a href="#" class="w3-bar-item w3-button w3-padding w3-margin-left">설정</a>
+  <hr style="margin:5px 0">
+
+
+</div>
+</nav>
+
+
+    <div class="w3-container" style="margin:50px 0 0 0;">
+      <br><br>
         <!-- The Grid -->
         <div class="w3-row">
-            <!-- Left Column -->
-            <div class="w3-col m2">
-                <!-- Profile -->
-                <div class="w3-card w3-round w3-white" style="height:800px">
-                    <div class="w3-container w3-center">
-                        <p><img src="img/devri.png" height="180" class="brand-img img-responsive" alt="Avatar"></p>
-                        <p style="font-size:20px;">Devri는 지금 <small style="font-size:18px;color:#7f8bff">(감정)</small> </p>
-                        <hr>
 
-                        <h2 style="color:grey;margin-bottom:20px;"><a style="text-decoration:none" href="/">메인</a></h2>
-                        <h2 style="color:#7fa1ff;margin-bottom:20px;"><a style="text-decoration:none" href="/calendar">일정 관리</a></h2>
-                        <h2 style="color:grey;margin-bottom:20px;"><a style="text-decoration:none" href="#">설정</a></h2>
-                        <h2 style="color:grey;margin-bottom:20px;">컨텐츠</h2>
-
-                    </div>
-                </div>
-                <br>
-
-                <!-- End Left Column -->
-            </div>
 
             <!-- Middle Column -->
-            <div class="w3-col m7">
+            <div class="w3-col m10">
 
-                <div class="w3-card w3-round w3-white" style="margin:0 30px;padding:0 40px;height:800px">
+                <div class="w3-card w3-round w3-white" style="height:500px">
                     <div class="w3-container w3-center">
                         <div class="mini-cal">
                             <div class="calender">
@@ -227,21 +229,24 @@
 
             </div>
 
-
-            <div class="w3-col m3">
-                <div class="w3-card w3-round w3-white" style="height:800px">
+<br style="clear:left"><br style="clear:left">
+            <div class="w3-col m10">
+                <div class="w3-card w3-white">
                     <div class="w3-container">
                         <br>
                         <h3 id="rightdate" class="w3-center" style="color:#626262;font-size:25px">das</h3>
                         <ul style="color:#7fa1ff">
-                            <li style="margin-bottom:30px;"><h2 style="text-align:left;margin:30px 30px 0 0;">&nbsp;배그 솔로로 치킨먹기</h2>
-                            <div style="width:100;font-size:18px"><small style="float:left">&nbsp;&nbsp;&nbsp;위너위너 치킨디너 </small><small style="float:right">[시간]</small></div>
+                            <li style="margin-bottom:30px;"><h2 style="text-align:left;margin:30px 30px 0 0;font-size:3.4vmax;">&nbsp;배그 솔로로 치킨먹기</h2>
+                            <div style="font-size:2.3vmax;"><small style="float:left">&nbsp;&nbsp;&nbsp;위너위너 치킨디너 </small><small style="float:right">[시간]</small></div>
                             </li>
                             <hr>
+                            <li style="margin-bottom:30px;"><h2 style="text-align:left;margin:30px 30px 0 0;font-size:3.4vmax;">&nbsp;야 기분좋다</h2>
+                            <div style="font-size:2.3vmax;"><small style="float:left">&nbsp;&nbsp;&nbsp;노무 좋다 </small><small style="float:right">[시간]</small></div>
+                            </li>
                             <hr>
-                            <li style="margin-bottom:30px;"><input type="id" style="border:none;font-size:30px;color:#7fa1ff;" placeholder="&nbsp;제목을 입력해주세요">
-                            <div style="width:100%;font-size:18px"><input type="id" style="border:none;text-align:left;color:#7fa1ff;font-size:80%;float:left;" placeholder="&nbsp;&nbsp;&nbsp;내용을 입력해주세요">
-                            <input type="date" style="border:none;text-align:right;color:#7fa1ff;font-size:80%;float:right;">
+                            <li style="margin-bottom:30px;"><input type="id" style="border:none;font-size:30px;color:#7fa1ff;font-size:3.4vmax;" placeholder="&nbsp;제목을 입력해주세요">
+                            <div style="font-size:18px"><input type="id" style="border:none;text-align:left;color:#7fa1ff;font-size:1.5vmax;float:left;" placeholder="&nbsp;&nbsp;&nbsp;내용을 입력해주세요">
+                            <input type="date" style="border:none;text-align:right;color:#7fa1ff;float:right;font-size:1.5vmax;">
                             </div>
                             </li>
                             <hr>
@@ -251,11 +256,39 @@
                         <div class="w3-center">
                         <button class="w3-button w3-blue">추가하기</button>
                     </div>
+                    <br>
                     </div>
                 </div>
 
 
+</div>
 
+</div>
+<br>
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+</script>
 </body>
 
 </html>

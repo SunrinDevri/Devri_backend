@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>Devri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Devri ffs" />
+    <meta name="msapplication-TileColor" content="#00a1cf">
+    <link href="css/custom.css" rel="stylesheet">
+    <link href="./css/w3.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Style Library -->
+
+    <!--Calender-->
+    <link rel="stylesheet" href="css/clndr.css" type="text/css" />
+    <script src="js/underscore-min.js"></script>
+    <script src="js/moment-2.2.1.js"></script>
+    <script src="js/clndr.js"></script>
+    <script src="js/site.js"></script>
+    <!--End Calender-->
+    <script src="js/jClocksGMT.js"></script>
+    <link rel="stylesheet" href="css/jClocksGMT.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+      <!-- Top container -->
+      <div class="w3-bar w3-top w3-large" style="z-index:4;background-color:#7f8bff;height:60px;color:white;">
+        <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" style="font-size:22px;" onclick="w3_open();"><i class="fa fa-bars"></i></button>
+          <a href="#" class="w3-bar-item" style="text-decoration:none;font-size:22px;">컨텐츠</a>
+      </div>
+
+      <!--slidebar-->
+      <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;margin-top:-15px" id="mySidebar"><br>
+<div class="w3-container w3-row" style="background-color:#7f8bff">
+  <div class="w3-col s4">
+    <img src="https://via.placeholder.com/100x100" style="width:100px;">
+    <h3 style="font-size:15px;color:#fff">지금 Devri는 (감정)</h3>
+  </div>
+  <div class="w3-col s8 w3-bar" >
+<span style="margin-left:20px;color:#fff;font-size:20px;">Project Devri<br><strong style="margin-left:20px;">: 000000</strong></span>
+
+  </div>
+</div>
+
+
+<div class="w3-bar-block" style="font-size:20px">
+  <a href="#" class="w3-bar-item w3-button w3-padding w3-margin-left" style="margin-top:5px">메인</a>
+  <hr style="margin:5px 0">
+  <a href="#" class="w3-bar-item w3-button w3-padding w3-margin-left">일정관리</a>
+  <hr style="margin:5px 0">
+  <a href="#" class="w3-bar-item w3-button w3-padding w3-margin-left">설정</a>
+  <hr style="margin:5px 0">
+
+
+</div>
+</nav>
+
+
+    <div class="w3-container" style="margin:40px 0 0 0;">
+
+        <!-- The Grid -->
+        <div class="w3-row">
+
+<br style="clear:left"><br style="clear:left">
+            <div class="w3-col m10">
+                <div class="w3-card w3-white">
+                    <div class="w3-container" style="text-align:left;color:grey">
+                        <br>
+                        <h1 style="text-align:left;color:grey;font-size:3.4vmax">관광지 정보</h1>
+                            <div>
+                            <img src="https://via.placeholder.com/130x130" style="display:block;float:left;margin:10px;" class="brand-img img-responsive" alt="Avatar">
+
+                            <h1 style="font-size:3.5vmax;">[관광지 이름]</h1>
+
+                              <h2 style="margin:0;font-size:2.5vmax;">[높이]</h2>
+                                <h2 style="margin:0;font-size:2.5vmax;">[완공]</h2>
+                                  <h2 style="margin:0;font-size:2.5vmax;">[영업시간]</h2>
+
+                    </div>
+
+                        <br>
+                        <br>
+                        <br>
+
+                    </div>
+                </div>
+
+
+</div>
+
+</div>
+<br>
+
+<div class="w3-col m10">
+    <div class="w3-card w3-white">
+        <div class="w3-container ">
+
+            <h1 style="text-align:left;color:grey;font-size:3.4vmax">위치 정보</h1>
+<img src="https://via.placeholder.com/100x100" style="display:block;float:right;margin:10px;" class="brand-img img-responsive" alt="Avatar">
+            <span style="font-size:2.5vmax;color:grey">&nbsp;&nbsp;&nbsp;태양계 이편한세상</span>
+            <br>
+
+
+            <br>
+            <br>
+
+        </div>
+    </div>
+
+
+</div>
+
+<a href="#" style="padding:6px 120px;width:100%;font-size:20px;margin-top:20px;border-radius:0" class="w3-button w3-blue">돌아가기</a>
+<br>
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+</script>
+</body>
+
+</html>
