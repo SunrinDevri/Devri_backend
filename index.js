@@ -35,15 +35,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 
-/**
- * autheticated control
- */
-
-var isAuthenticated = function (req, res, next) {
-  if (req.isAuthenticated())  return next();
-  res.render('login');
-};
-
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -60,7 +51,6 @@ app.use(cookieSession({
 }))
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(isAuthenticated);
 
 //router setting
 var index = require('./routes/index')(express.Router(), Users, passport);
@@ -131,6 +121,5 @@ function onListening() {
     'port ' + addr.port;
   debug('Listening on ' + bind);
 }
-
 
 module.exports = app;
