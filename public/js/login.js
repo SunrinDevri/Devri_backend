@@ -18,5 +18,5 @@ function login() {
   form.appendChild(pin);
   form.appendChild(code);
 
-  form.sumbit();
+  form.submit();
 }
