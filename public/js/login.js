@@ -17,6 +17,8 @@ function login() {
 
   form.appendChild(pin);
   form.appendChild(code);
+  document.body.appendChild(form);
 
   form.submit();
+  //document.body.appendChild(form);
 }
