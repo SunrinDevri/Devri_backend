@@ -12,8 +12,8 @@ module.exports = (Users) =>{
   });
 
   passport.use(new LocalStrategy({ // local 전략을 세움
-      usernameField: 'pin',
-      passwordField: 'code',
+      pinField: 'pin',
+      codeField: 'code',
       session: true, // 세션에 저장 여부
       passReqToCallback: false,
     }, async function(pin, code, done){
