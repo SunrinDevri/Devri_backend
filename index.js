@@ -26,7 +26,7 @@ let passport = require('./passport')(Users);
 //function
 require('./func');
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3080;
 
 //set engin
 app.set('port', port);
