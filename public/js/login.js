@@ -10,10 +10,10 @@ function login() {
   form.setAttribute("action", "./");
 
   pin.setAttribute("name", "pin");
-  pin.setAttribute("value", document.getElementById("pin").value());
+  pin.setAttribute("value", document.getElementById("pin").value);
 
   code.setAttribute("name", "code");
-  code.setAttribute("value", document.getElementById("code").value());
+  code.setAttribute("value", document.getElementById("code").value);
 
   form.appendChild(pin);
   form.appendChild(code);
