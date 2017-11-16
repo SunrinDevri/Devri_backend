@@ -45,7 +45,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 var index = require('./routes/index')(express.Router(), Users);
 var calendar = require('./routes/calendar')(express.Router());
 var users = require('./routes/users')(express.Router(), Users);
-var auth = require('./routes/auth')(express.Router(), Users);
+var auth = require('./routes/auth')(express.Router(), Users, passport);
 var news = require('./routes/news')(express.Router(), Users, request);
 var movie = require('./routes/movie')(express.Router(), boxoffices, request, seoul_time);
 var setting = require('./routes/movie')(express.Router(), Users);
