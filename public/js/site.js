@@ -26,9 +26,17 @@ $(document).ready( function() {
     //   startDate: '2013-11-01',
     //   endDate: '2013-11-15'
     // },
+    //달력 날짜 클릭했을때
     clickEvents: {
       click: function(target) {
-        console.log(target);
+          var tmpDate = target.day.split("-");
+
+        $('.test4 td').removeClass("w3-blue"); //선택한 날짜 색 조정
+        $(target.element).addClass("w3-blue");
+        $('#rightdate').html(tmpDate[1]+ "월 "+tmpDate[2] +"일");
+        $('#madedate').html(target.day);
+
+
         if($(target.element).hasClass('inactive')) {
           console.log('not a valid datepicker date.');
         } else {

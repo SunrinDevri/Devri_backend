@@ -33,7 +33,7 @@
     "<% } %>" +
     "</tr>" +
     "</thead>" +
-    "<tbody>" +
+    "<tbody class='test4'>" +
     "<% for(var i = 0; i < numberOfRows; i++){ %>" +
       "<tr>" +
       "<% for(var j = 0; j < 7; j++){ %>" +
@@ -503,6 +503,7 @@
       events: [],
       date: null
     };
+    var danktarget = currentTarget;
     // did we click on a day or just an empty box?
     if(targetWasDay) {
       var dateString;
@@ -515,8 +516,10 @@
         // Open to suggestions on how to improve this guy.
         dateString = currentTarget.className.substring(classNameIndex + 13, classNameIndex + 23);
         target.date = moment(dateString);
+        target.day = dateString;
       } else {
         target.date = null;
+        target.day = null;
       }
 
       // do we have events?

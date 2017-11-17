@@ -11,6 +11,7 @@
     <link href="./css/w3.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- Style Library -->
 
     <!--Calender-->
@@ -165,7 +166,7 @@
                     <h2 style="text-align:left;color:grey;font-size:4vmax">위치 정보</h2>
 
                     <div>
-                        <img src="https://via.placeholder.com/100x100" style="display:block;float:left;margin:10px;" class="brand-img img-responsive" alt="Avatar">
+                        <img src="http://maps.googleapis.com/maps/api/staticmap?center=남산타워,SEOUL&zoom=14&size=100x100&maptype=roadmap&sensor=false " style="display:block;float:left;margin:10px;" class="brand-img img-responsive" alt="Avatar">
                         <input type="id" style="margin:10px;border: 0;outline: 0;background: transparent;border-bottom: 2px solid #7fa1ff;font-size:3vmax;;color:#7fa1ff;width:100px;" placeholder="&nbsp;지도 검색">
 
 
@@ -203,6 +204,7 @@
                     mySidebar.style.display = "none";
                     overlayBg.style.display = "none";
                 }
+
             </script>
 </body>
 

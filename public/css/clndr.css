@@ -114,14 +114,12 @@
   height: inherit;
   color:#7fa1ff;
   vertical-align:middle;
-
 }
 
 .cal1 .clndr .clndr-table tr .day.today {
-    background-color:#7fa1ff;
+    background-color:#999;
     color: #fff!important;
     text-decoration: none;
-    border: 1px solid #5482AB;
  }
 
 .cal1 .clndr .clndr-table tr .day.today:hover {

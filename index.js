@@ -55,7 +55,7 @@ app.use(passport.session());
 
 //router setting
 var index = require('./routes/index')(express.Router(), Users, passport, now_time);
-var calendar = require('./routes/calendar')(express.Router());
+var calendar = require('./routes/calendar')(express.Router(), Users, now_time);
 var users = require('./routes/users')(express.Router(), Users);
 var auth = require('./routes/auth')(express.Router(), Users, passport);
 var news = require('./routes/news')(express.Router(), Users, request);

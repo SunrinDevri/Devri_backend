@@ -31,6 +31,7 @@ var UsersSchema = mongoose.Schema({
   },
   calendar:[{
     date: {type: String},
+    title: {type: String},
     summary: {type: String}
   }]
 });
