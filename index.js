@@ -7,8 +7,7 @@ import cookie from 'cookie';
 import path from 'path';
 import randomstring from 'randomstring';
 import fs from 'fs';
-import unirest from 'unirest';
-import request from 'async-request';
+import axios from 'axios';
 import moment from 'moment-timezone';
 import cookieSession from 'cookie-session';
 
@@ -55,11 +54,11 @@ app.use(passport.session());
 
 //router setting
 var index = require('./routes/index')(express.Router(), Users, passport, now_time);
-var calendar = require('./routes/calendar')(express.Router(), Users, now_time);
+var calendar = require('./routes/calendar')(express.Router(), Users, axios, now_time);
 var users = require('./routes/users')(express.Router(), Users);
 var auth = require('./routes/auth')(express.Router(), Users, passport);
-var news = require('./routes/news')(express.Router(), Users, request);
-var movie = require('./routes/movie')(express.Router(), boxoffices, request, seoul_time);
+var news = require('./routes/news')(express.Router(), Users, axios);
+var movie = require('./routes/movie')(express.Router(), boxoffices,  axios, seoul_time);
 var setting = require('./routes/movie')(express.Router(), Users);
 const sounds = require('./routes/sounds')(express.Router(), Users);
 

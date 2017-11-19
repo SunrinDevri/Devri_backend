@@ -21,8 +21,16 @@ module.exports = (router, Users)=>{
     return await res.render('index', {user: user_info});
   })
 
-  .post('/user', (req, res)=>{
+  .get('/movie/genre', async (req, res)=>{
+    var user = await Users.findOne({id: req.user.id, passwd: req.user.passwd});
+    var genre = user.kind;
+    return res.status(200).json({genre: genre});
+  })
 
+  .put('/movie/genre', async (req, res)=>{
+    var user = await Users.findOne({id: req.user.id, passwd: req.user.passwd}, {$set: {movie: {kind: genre}}});
+    var genre = user.kind;
+    return res.status(200).json({genre: genre});
   })
 
   .put('/:id', (req, res)=>{

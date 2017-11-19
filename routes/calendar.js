@@ -4,7 +4,7 @@ module.exports = (router, Users, now_time)=>{
     var calendar = user.calendar;
     res.status(200).send(calendar);
   });
-  router.get('/:month/:day', async function(req, res, next)=>{
+  router.get('/:month/:day', async (req, res, next)=>{
     var year = now_time.format("YYYY");
     var user = await Users.findOne({id: req.user.id, passwd: req.user.passwd});
     var calendar = user.calendar;
@@ -16,6 +16,11 @@ module.exports = (router, Users, now_time)=>{
       if(calendar[i].date === year+month+day) contet = calendar[i]
     res.status(200).json(contet);
 
+  });
+
+  router.post('/', async (req, res, next)=>{
+    const result = await Users.update(req.user, {$push: {calendar: req.body}});
+    res.status(200).json({messages: "success"});
   });
 
   return router;
