@@ -96,3 +96,9 @@ $(document).ready( function() {
   });
 
 });
+
+async function get_genre(){
+  return await axios.get("http://iwin247.kr/movie/genre");
+}
+
+console.log(get_genre);
