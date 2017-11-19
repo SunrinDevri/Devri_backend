@@ -31,9 +31,9 @@
         <nav class="main-nav navbar-fixed-top">
 
             <div class="navbar-header" style="line-height:60px;">
-                <a href="#">
-                              <img src="img/LogoType.png" style="margin-left:8%;vertical-align:middle" class="brand-img img-responsive w3-animate-left">
-                          </a>
+                <a href="#" style="margin-left:8%;vertical-align:middle;text-decoration:none;font-size:40px;color:white;" class="w3-animate-left">
+                  Project Devri : 00000
+            </a>
             </div>
 
         </nav>
@@ -72,6 +72,7 @@
                         <br>
                         <h1 style="text-align:left;color:grey">여행지 정보</h1>
                             <div>
+                                <div id="googleMap" style="display:block;float:left;margin:40px 70px 50px 40px;width:180px;height:180px;"></div>
                             <img src="https://via.placeholder.com/400x300" style="display:block;float:left;margin:40px 70px 50px 40px;" class="brand-img img-responsive" alt="Avatar">
                             <br>
                             <h1>[제목]</h1>
@@ -105,7 +106,17 @@
         </div>
     </div>
 
-
+    <script type="text/javascript">
+    function myMap() {
+    var mapProp= {
+        center:new google.maps.LatLng(51.508742,-0.120850), //x y 좌표
+        zoom:5,
+    };
+    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    }
+    
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnQON_NXW2zQOoPvyFnAqmwaA17ZHy3-k&callback=myMap"></script>
 </body>
 
 </html>

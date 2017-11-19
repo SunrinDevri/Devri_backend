@@ -10,6 +10,7 @@ import fs from 'fs';
 import axios from 'axios';
 import moment from 'moment-timezone';
 import cookieSession from 'cookie-session';
+var CORS = require('cors')();
 
 //external module setting
 let seoul_time = moment().tz("Asia/Seoul").subtract(1, 'days');
@@ -51,6 +52,7 @@ app.use(cookieSession({
 }))
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(CORS);
 
 //router setting
 var index = require('./routes/index')(express.Router(), Users, passport, now_time);
