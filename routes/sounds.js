@@ -5,8 +5,9 @@ const storage = Storage();
 var google_account = require('/root/google/account.json');
 
 const client = new speech.SpeechClient({
-  projectId: google_account.projectId,
+  projectId: google_account.project_id,
 });
+
 
 // Makes an authenticated API request.
 storage
@@ -36,8 +37,8 @@ const request = {
 
 
 module.exports = (router, axios)=>{
-  router.get('/', function(req, res, next) {
-    request.audio = req.params.base64;
+  router.post('/', function(req, res, next) {
+    request.audio = req.body.base64;
     client.recognize(request).then(data => {
         const response = data[0];
         const transcription = response.results.map(result => result.alternatives[0].transcript).join('\n');
@@ -46,6 +47,7 @@ module.exports = (router, axios)=>{
       .catch(err => {
         console.error('ERROR:', err);
       });
+  return res.status(200).send("asdf");
 });
 
 
