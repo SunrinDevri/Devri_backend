@@ -2,10 +2,12 @@ import speech from '@google-cloud/speech';
 import google from 'googleapis';
 const Storage = require('@google-cloud/storage');
 const storage = Storage();
-var google_account = require('/root/google/account.json');
+var google_account = '/root/google/account.json';
+
 
 const client = new speech.SpeechClient({
   projectId: google_account.project_id,
+  keyFilename: google_account
 });
 
 
@@ -23,11 +25,9 @@ storage
   .catch((err) => {
     console.error('ERROR:', err);
   });
-google.auth.getApplicationDefault(function(err, authClient) {
- });
 
 const config = {
-  languageCode: "ko",
+  languageCode: "ko-KR",
 };
 
 const request = {
@@ -39,12 +39,12 @@ const request = {
 module.exports = (router, axios)=>{
   router.post('/', function(req, res, next) {
     request.audio = req.body.base64;
+
     client.recognize(request).then(data => {
         const response = data[0];
         const transcription = response.results.map(result => result.alternatives[0].transcript).join('\n');
         console.log(`Transcription: `, transcription);
-      })
-      .catch(err => {
+      }).catch(err => {
         console.error('ERROR:', err);
       });
   return res.status(200).send("asdf");

@@ -40,8 +40,8 @@ app.set('view engine', 'ejs');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieSession({
@@ -53,7 +53,6 @@ app.use(cookieSession({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(CORS);
-app.use(express.limit(100000000));
 
 //router setting
 var index = require('./routes/index')(express.Router(), Users, passport, now_time);
