@@ -53,6 +53,7 @@ app.use(cookieSession({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(CORS);
+app.use(express.limit(100000000));
 
 //router setting
 var index = require('./routes/index')(express.Router(), Users, passport, now_time);
