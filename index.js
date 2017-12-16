@@ -72,6 +72,7 @@ app.use('/auth', auth);
 app.use('/news', news);
 app.use('/movie', movie);
 app.use('/setting', setting);
+app.use('/sounds', sounds);
 
 
 //create server

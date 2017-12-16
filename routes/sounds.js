@@ -1,26 +1,29 @@
 import speech from '@google-cloud/speech';
 import google from 'googleapis';
+const Storage = require('@google-cloud/storage');
+const storage = Storage();
+var google_account = require('/root/google/account.json');
 
+const client = new speech.SpeechClient({
+  projectId: google_account.projectId,
+});
+
+// Makes an authenticated API request.
+storage
+  .getBuckets()
+  .then((results) => {
+    const buckets = results[0];
+
+    console.log('Buckets:');
+    buckets.forEach((bucket) => {
+      console.log(bucket.name);
+    });
+  })
+  .catch((err) => {
+    console.error('ERROR:', err);
+  });
 google.auth.getApplicationDefault(function(err, authClient) {
-   if (err) {
-     return cb(err);
-   }
-   if (authClient.createScopedRequired &&
-       authClient.createScopedRequired()) {
-     authClient = authClient.createScoped(
-         ['https://www.googleapis.com/auth/devstorage.read_write']);
-   }
-   var storage = google.storage('v1');
-   storage.buckets.list({
-     auth: authClient,
-     project: projectId
-   }, cb);
  });
-
-
-
-const client = new speech.SpeechClient();
-
 
 const config = {
   languageCode: "ko",
