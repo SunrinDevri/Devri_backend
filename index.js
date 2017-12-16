@@ -10,6 +10,7 @@ import fs from 'fs';
 import axios from 'axios';
 import moment from 'moment-timezone';
 import cookieSession from 'cookie-session';
+var multer  = require('multer')
 var CORS = require('cors')();
 
 //external module setting
@@ -41,7 +42,7 @@ app.set('view engine', 'ejs');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json({limit: '50mb'}));
-app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: false, parameterLimit: 1000000}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieSession({
@@ -62,7 +63,7 @@ var auth = require('./routes/auth')(express.Router(), Users, passport);
 var news = require('./routes/news')(express.Router(), Users, axios);
 var movie = require('./routes/movie')(express.Router(), boxoffices,  axios, seoul_time);
 var setting = require('./routes/movie')(express.Router(), Users);
-const sounds = require('./routes/sounds')(express.Router(), Users, axios);
+const sounds = require('./routes/sounds')(express.Router(), Users, axios, fs, multer);
 
 //router setting
 app.use('/calendar', calendar);

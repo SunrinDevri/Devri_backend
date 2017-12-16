@@ -1,53 +1,53 @@
 import speech from '@google-cloud/speech';
-import google from 'googleapis';
-const Storage = require('@google-cloud/storage');
-const storage = Storage();
-var google_account = '/root/google/account.json';
 
+let google_account = require('/root/google/account.json');
+var google_auth = '/root/google/account.json';
 
 const client = new speech.SpeechClient({
   projectId: google_account.project_id,
-  keyFilename: google_account
+  keyFilename: google_auth
 });
 
-
-// Makes an authenticated API request.
-storage
-  .getBuckets()
-  .then((results) => {
-    const buckets = results[0];
-
-    console.log('Buckets:');
-    buckets.forEach((bucket) => {
-      console.log(bucket.name);
-    });
+module.exports = (router, Users, axios, fs, multer)=>{
+  var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, '/root/Devri_backend/uploads')
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.originalname)
+    }
   })
-  .catch((err) => {
-    console.error('ERROR:', err);
-  });
-
-const config = {
-  languageCode: "ko-KR",
-};
-
-const request = {
-  config: config,
-  audio: "",
-};
+  var upload = multer({ storage: storage })
 
 
-module.exports = (router, axios)=>{
-  router.post('/', function(req, res, next) {
-    request.audio = req.body.base64;
+  router.post('/', upload.single('wav'), async (req, res, next)=>{
+    const file = fs.readFileSync('/root/Devri_backend/uploads/'+req.file.originalname);
+    const audioBytes = file.toString('base64');
 
-    client.recognize(request).then(data => {
+    const audio = {
+      content: audioBytes,
+    };
+
+    const config = {
+      languageCode: 'ko-KR',
+    };
+
+    const request = {
+      audio: audio,
+      config: config,
+    };
+    client
+      .recognize(request)
+      .then(data => {
         const response = data[0];
-        const transcription = response.results.map(result => result.alternatives[0].transcript).join('\n');
-        console.log(`Transcription: `, transcription);
-      }).catch(err => {
-        console.error('ERROR:', err);
-      });
-  return res.status(200).send("asdf");
+        const transcription = response.results
+                .map(result => result.alternatives[0].transcript)
+                .join('\n');
+        return res.status(200).json({transcript: transcription});
+    })
+    .catch(err => {
+       return res.status(500).json({message: "wrong file"});
+    });
 });
 
 
