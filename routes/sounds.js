@@ -1,21 +1,20 @@
 import speech from '@google-cloud/speech';
 import google from 'googleapis';
 
-
-const gooogle_auth = async()=>{
-  const authClient = await google.auth.getApplicationDefault();
-  var storage = google.storage('v1');
-
-  if (authClient.createScopedRequired && authClient.createScopedRequired())
-    authClient = authClient.createScoped(['https://www.googleapis.com/auth/devstorage.read_write']);
-
-    storage.buckets.list({
-      auth: authClient,
-      project: projectId
-    });
-}
-
-
+google.auth.getApplicationDefault(function(err, authClient) {
+   if (err) {
+     return cb(err);
+   }
+   if (authClient.createScopedRequired &&
+       authClient.createScopedRequired()) {
+     authClient = authClient.createScoped(
+         ['https://www.googleapis.com/auth/devstorage.read_write']);
+   }
+   var storage = google.storage('v1');
+   storage.buckets.list({
+     auth: authClient,
+     project: projectId
+   }, cb);
  });
 
 
@@ -33,7 +32,7 @@ const request = {
 };
 
 
-module.exports = (router)=>{
+module.exports = (router, axios)=>{
   router.get('/', function(req, res, next) {
     request.audio = req.params.base64;
     client.recognize(request).then(data => {
