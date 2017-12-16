@@ -1,4 +1,23 @@
-import speech form '@google-cloud/speech';
+import speech from '@google-cloud/speech';
+import google from 'googleapis';
+
+google.auth.getApplicationDefault(function(err, authClient) {
+   if (err) {
+     return cb(err);
+   }
+   if (authClient.createScopedRequired &&
+       authClient.createScopedRequired()) {
+     authClient = authClient.createScoped(
+         ['https://www.googleapis.com/auth/devstorage.read_write']);
+   }
+ });
+
+ var storage = google.storage('v1');
+    storage.buckets.list({
+      auth: authClient,
+      project: projectId
+    }, cb);
+    
 
 const client = new speech.SpeechClient();
 
