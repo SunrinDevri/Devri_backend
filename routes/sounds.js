@@ -10,14 +10,14 @@ google.auth.getApplicationDefault(function(err, authClient) {
      authClient = authClient.createScoped(
          ['https://www.googleapis.com/auth/devstorage.read_write']);
    }
+   var storage = google.storage('v1');
+   storage.buckets.list({
+     auth: authClient,
+     project: projectId
+   }, cb);
  });
 
- var storage = google.storage('v1');
-    storage.buckets.list({
-      auth: authClient,
-      project: projectId
-    }, cb);
-    
+
 
 const client = new speech.SpeechClient();
 
