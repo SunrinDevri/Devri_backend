@@ -1,4 +1,5 @@
 import speech from '@google-cloud/speech';
+import TwitterKoProcessor from 'node-twitter-korean-text'; 
 
 let google_account = require('/root/google/account.json');
 var google_auth = '/root/google/account.json';
@@ -43,6 +44,9 @@ module.exports = (router, Users, axios, fs, multer)=>{
         const transcription = response.results
                 .map(result => result.alternatives[0].transcript)
                 .join('\n');
+        const tokens = await TwitterKoProcessor.tokenize(transcription);
+        const result = await TwitterKoProcessor.tokensToJsonArray(tokens, true)
+      
         return res.status(200).json({transcript: transcription});
     })
     .catch(err => {
