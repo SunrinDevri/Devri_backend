@@ -35,6 +35,7 @@
     "mongoose": "*",
     "morgan": "^1.7.0",
     "multer": "^1.3.0",
+    "node-twitter-korean-text": "^1.0.5",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "q": "^1.5.1",

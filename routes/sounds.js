@@ -39,7 +39,7 @@ module.exports = (router, Users, axios, fs, multer)=>{
     };
     client
       .recognize(request)
-      .then(data => {
+      .then(async data => {
         const response = data[0];
         const transcription = response.results
                 .map(result => result.alternatives[0].transcript)
@@ -47,11 +47,11 @@ module.exports = (router, Users, axios, fs, multer)=>{
         const tokens = await TwitterKoProcessor.tokenize(transcription);
         const result = await TwitterKoProcessor.tokensToJsonArray(tokens, true)
       
-        return res.status(200).json({transcript: transcription});
+        return res.status(200).json({result: result});
     })
-    .catch(err => {
-       return res.status(500).json({message: "wrong file"});
-    });
+    /*.catch(err => {
+       return res.status(412).json({message: err});
+    });*/
 });
 
 
